@@ -1,0 +1,136 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+.poke-card {
+  width: 370px;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(219, 51, 51, 0.52);
+  display: flex;
+  margin: 16px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: #f1924e;
+  border: 4px solid #eecb23;
+}
+.top {
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 5px 0 10px;
+  align-items: center;
+}
+.poke-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.health-points {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pokepic {
+  align-self: center;
+  width: 260px;
+}
+
+.pic-of-pokemon {
+  width: 260px;
+  border: 4px solid #eecb23;
+}
+
+.dragon-energy {
+  width: 35px;
+  padding: 3px 3px 3px 3px;
+}
+
+.normal-energy {
+  width: 35px;
+  height: 35px;
+  padding: 3px 3px 3px 3px;
+}
+
+.attack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.attack-energy {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
+.attack1 {
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0px 5px 0px;
+  border-bottom: 4px solid black;
+  align-items: center;
+}
+
+.attack-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.attack-damage {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.attack2 {
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0px 5px 0px;
+  border-bottom: 4px solid black;
+  align-items: center;
+}
+
+.bottom-section {
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0px 5px 0px;
+  align-content: center;
+}
+
+.weakness {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.resistance {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.retreat-cost {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.poke-weakness {
+  font-size: 12px;
+}
+
+.poke-resistance {
+  font-size: 12px;
+}
+
+.poke-retreat-cost {
+  font-size: 12px;
+}

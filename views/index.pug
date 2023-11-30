@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  div.card-area
+    div.poke-card
+      div.top
+        div.pokemon-name
+          p.poke-name=pokemonCard.name
+        div.health
+          p.health-points=pokemonCard.hitpoints
+        div.energy
+          img(src=pokemonCard.energytype class="dragon-energy")
+      div.pokepic
+        div.pokemon
+         img(src=pokemonCard.image class="pic-of-pokemon")
+      div.attack1
+        div.attack-energy
+          -for(let i = 0; i<pokemonCard.attackenergy; i++)
+            spanpokemonCard.attack1energy1 class="dragon-energy"
+
+        div.attack
+          p.attack-name=pokemonCard.attackname1
+        div.damage
+          p.attack-damage=pokemonCard.attackdam
+      div.attack2
+        div.attack-energy
+          img(src=pokemonCard.attack2energy1 class="dragon-energy")
+          img(src=pokemonCard.attack2energy2 class="normal-energy")
+          img(src=pokemonCard.attack2energy3 class="dragon-energy")
+        div.attack
+          p.attack-name=pokemonCard.attackname2
+        div.damage
+          p.attack-damage=pokemonCard.attackdam2
+      div.bottom-section
+        div.weakness
+          div.poke-weakness
+            p.weakness Weakness
+            div.energy
+              img(src=pokemonCard.weaknessenergy class="dragon-energy")
+        div.resistance
+          div.poke-resistance
+            p.resistance Resistance
+            div.energy
+              img(src=pokemonCard.resistenceenergy class="dragon-energy")
+        div.retreat-cost
+          div.poke-retreat-cost
+            p.retreat-cost Retreat Cost
+            div.energy
+              img(src=pokemonCard.retreatenergy class="normal-energy")
+              img(src=pokemonCard.retreatenergy2 class="normal-energy")
