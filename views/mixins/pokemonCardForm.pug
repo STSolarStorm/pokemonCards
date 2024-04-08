@@ -1,0 +1,69 @@
+mixin pokemonCardForm(pokemonCard, actionURL, mode, title)
+
+    div.form-panel
+        div.header= title
+            form(action=actionURL method='post')
+                div.form-input
+                    label(for='name') Name:
+                    input(type='text' id='name' name='name' value=pokemonCard.name)
+                div.form-input
+                    label(for='type') Type:
+                    select(id='type' name='type' autocomplete='off')
+                        each type in types
+                            option(value=type selected = (type === pokemonCard.type)) #{type}
+                div.form-input
+                    label(for='hitpoints') Hitpoints:
+                    input(type='text' id='hitpoints' name='hitpoints' value=pokemonCard.hitpoints)
+                div.form-input
+                    label(for='type_energy') Type Energy:
+                    input(type='text' id='type_energy' name='type_energy' value=pokemonCard.type_energy)
+                div.form-input
+                    label(for='image') Pokemon Picture:
+                    input(type='text' id='image' name='image' value=pokemonCard.image)
+                div.form-input
+                    label(for='attackname1') Attack 1 Name:
+                    input(type='text' id='attackname1' name='attackname1' value=pokemonCard.attackname1)
+                div.form-input
+                    label(for='attackdam') Attack 1 Damage:
+                    input(type='text' id='attackdam' name='attackdam' value=pokemonCard.attackdam)
+                div.form-input
+                    label(for='attack1_energy1') Attack 1 Energy 1:
+                    input(type='text' id='attack1_energy1' name='attack1_energy1' value=pokemonCard.attack1_energy1)
+                div.form-input
+                    label(for='attack1_energy2') Attack 1 Energy 2:
+                    input(type='text' id='attack1_energy2' name='attack1_energy2' value=pokemonCard.attack1_energy2)
+                div.form-input
+                    label(for='attack1_energy3') Attacl 1 Energy 3:
+                    input(type='text' id='attack1_energy3' name='attack1_energy3' value=pokemonCard.attack1_energy3)
+                div.form-input
+                    label(for='attackname2') Attack 2 Name:
+                    input(type='text' id='attackname2' name='attackname2' value=pokemonCard.attackname2)
+                div.form-input
+                    label(for='attackdam2') Attack 2 Damage:
+                    input(type='text' id='attackdam2' name='attackdam2' value=pokemonCard.attackdam2)
+                div.form-input
+                    label(for='attack2_energy1') Attack 2 Energy 1:
+                    input(type='text' id='attack2_energy1' name='attack2_energy1' value=pokemonCard.attack2_energy1)
+                div.form-input
+                    label(for='attack2_energy2') Attack 2 Energy 2:
+                    input(type='text' id='attack2_energy2' name='attack2_energy2' value=pokemonCard.attack2_energy2)
+                div.form-input
+                    label(for='attack2_energy3') Attacl 2 Energy 3:
+                    input(type='text' id='attack2_energy3' name='attack2_energy3' value=pokemonCard.attack2_energy3)
+                div.form-input
+                    label(for='weakness_energy') Weakness Energy
+                    input(type='text' id='weakness_energy' name='weakness_energy' value=pokemonCard.weakness_energy)
+                div.form-input
+                    label(for='resistance_energy') Resistance Energy:
+                    input(type='text' id='resistance_energy' name='resistance_energy' value=pokemonCard.resistance_energy)
+                div.form-input
+                    label(for='retreat_cost1') Retreat Cost 1:
+                    input(type='text' id='retreat_cost1' name='retreat_cost1' value=pokemonCard.retreat_cost1)
+                div.form-input
+                    label(for='retreat_cost2') Retreat Cost 2:
+                    input(type='text' id='retreat_cost2' name='retreat_cost2' value=pokemonCard.retreat_cost2)
+            div.button-row
+                a.button.cancel(href='/') Cancel
+                if(mode === 'edit')
+                    a.button.delete(href=`/delete/${pokemonCard.id}`) Delete
+                button.button.save(type='submit') Submit

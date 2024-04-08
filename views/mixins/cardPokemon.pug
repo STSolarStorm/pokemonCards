@@ -1,0 +1,51 @@
+mixin cardPokemon(pokemonCard)
+
+    div.card-area
+        div.poke-card(class=pokemonCard.type)
+            div.top
+                div.pokemon-name
+                    p.poke-name=pokemonCard.name
+                div.health
+                    p.health-points=pokemonCard.hitpoints
+                div.energy
+                    img(src=pokemonCard.type_energy)
+            div.pokepic
+                div.pokemon
+                    img(src=pokemonCard.image class="pic-of-pokemon")
+            div.attack
+                div.attack-energy
+                    img(src=pokemonCard.attack1_energy1)
+                    img(src=pokemonCard.attack1_energy2)
+                    img(src=pokemonCard.attack1_energy3)
+                div.attack_name
+                    p.attack-name=pokemonCard.attackname1
+                div.damage
+                    p.attack-damage=pokemonCard.attackdam
+            div.attack
+                div.attack-energy
+                    img(src=pokemonCard.attack2_energy1)
+                    img(src=pokemonCard.attack2_energy2)
+                    img(src=pokemonCard.attack2_energy3)
+                div.attack_name
+                    p.attack-name=pokemonCard.attackname2
+                div.damage
+                    p.attack-damage=pokemonCard.attackdam2
+            div.bottom-section
+                div.weakness
+                    div.poke-weakness
+                        p.weakness Weakness
+                        div.energy
+                            img(src=pokemonCard.weakness_energy)
+                div.resistance
+                    div.poke-resistance
+                        p.resistance Resistance
+                        div.energy
+                            img(src=pokemonCard.resistance_energy)
+                div.retreat-cost
+                    div.poke-retreat-cost
+                        p.retreat-cost Retreat Cost
+                        div.energy
+                            img(src=pokemonCard.retreat_cost1)
+                            img(src=pokemonCard.retreat_cost2)
+            div.edit
+                a(href=`/edit/${pokemonCard.id}`) Edit

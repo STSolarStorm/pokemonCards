@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    include mixins/pokemonCardForm
+    +pokemonCardForm(pokemonCard, `/edit/${pokemonCard.id}`, 'edit', 'Edit Pokemon Card')

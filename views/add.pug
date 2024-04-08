@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    include mixins/pokemonCardForm
+    +pokemonCardForm(pokemonCard, `/add`, 'add', 'Add Pokemon Card')

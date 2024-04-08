@@ -6,21 +6,96 @@ body {
 a {
   color: #00B7FF;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 48px;
+  gap: 16px;
+}
+
 .card-area {
   display: flex;
   flex-wrap: wrap;
+  padding: 48px;
+  gap: 16px;
 }
+
 .poke-card {
   width: 370px;
-  height: 100%;
-  box-shadow: 0 4px 8px 0 rgba(219, 51, 51, 0.52);
+  height: 95%;
   display: flex;
   margin: 16px;
   border-radius: 20px;
   flex-direction: column;
-  background-color: #f1924e;
-  border: 4px solid #eecb23;
 }
+
+.dragon {
+background-color: #f1924e;
+border: 4px solid #eecb23;
+box-shadow: 0 4px 8px 0 rgba(219, 51, 51, 0.52);
+}
+
+.fire {
+  background-color: #b42727;
+  border: 4px solid #c46b2b;
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.52);
+}
+
+.water{
+  background-color: #279ccb;
+  border: 4px solid #7f95be;
+  box-shadow: 0 4px 8px 0 rgba(105, 215, 199, 0.52);
+}
+
+.fighting {
+  background-color: #9b7969;
+  border: 4px solid #9d7215;
+  box-shadow: 0 4px 8px 0 rgba(140, 34, 34, 0.52);
+}
+
+.psychic {
+  background-color: #742fb7;
+  border: 4px solid #462c72;
+  box-shadow: 0 4px 8px 0 rgba(170, 140, 241, 0.52);
+}
+
+.dark {
+  background-color: #6c6c6c;
+  border: 4px solid #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.52);
+}
+
+.grass {
+  background-color: #2f8c31;
+  border: 4px solid #104404;
+  box-shadow: 0 4px 8px 0 rgba(76, 141, 64, 0.52);
+}
+
+.lightning {
+  background-color: #ffc80c;
+  border: 4px solid #695d19;
+  box-shadow: 0 4px 8px 0 rgba(253, 235, 143, 0.52);
+}
+
+.normal {
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 0 4px 8px 0 rgba(217, 217, 217, 0.52);
+}
+
+.metal {
+  background-color: #838383;
+  border: 4px solid #4f4949;
+  box-shadow: 0 4px 8px 0 rgba(147, 147, 147, 0.52);
+}
+
+.fairy {
+  background-color: #f986ff;
+  border: 4px solid #961292;
+  box-shadow: 0 4px 8px 0 rgba(156, 106, 203, 0.52);
+}
+
 .top {
   border-radius: 20px 20px 0 0;
   display: flex;
@@ -45,7 +120,8 @@ a {
 
 .pic-of-pokemon {
   width: 260px;
-  border: 4px solid #eecb23;
+  height: 294px;
+  border: 4px solid #000000;
 }
 
 .dragon-energy {
@@ -71,7 +147,7 @@ a {
   align-items: center;
 }
 
-.attack1 {
+.attack {
   border-radius: 20px 20px 0 0;
   display: flex;
   justify-content: space-around;
@@ -89,7 +165,7 @@ a {
   font-weight: bold;
 }
 
-.attack2 {
+.attack {
   border-radius: 20px 20px 0 0;
   display: flex;
   justify-content: space-around;
