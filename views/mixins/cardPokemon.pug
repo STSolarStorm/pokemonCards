@@ -18,7 +18,10 @@ mixin cardPokemon(pokemonCard)
                     img(src=pokemonCard.attack1_energy2)
                     img(src=pokemonCard.attack1_energy3)
                 div.attack_name
-                    p.attack-name=pokemonCard.attackname1
+                    if pokemonCard.attack1_energy1 === '' && pokemonCard.attack1_energy2 === '' && pokemonCard.attack1_energy3 === '' && pokemonCard.attackdam === ''
+                        p.attack-name-special=pokemonCard.attackname1
+                    else
+                        p.attack-name=pokemonCard.attackname1
                 div.damage
                     p.attack-damage=pokemonCard.attackdam
             div.attack
@@ -27,7 +30,10 @@ mixin cardPokemon(pokemonCard)
                     img(src=pokemonCard.attack2_energy2)
                     img(src=pokemonCard.attack2_energy3)
                 div.attack_name
-                    p.attack-name=pokemonCard.attackname2
+                    if pokemonCard.attack2_energy1 === '' && pokemonCard.attack2_energy2 === '' && pokemonCard.attack2_energy3 === '' && pokemonCard.attackdam2 === ''
+                        p.attack-name-special=pokemonCard.attackname2
+                    else
+                        p.attack-name=pokemonCard.attackname2
                 div.damage
                     p.attack-damage=pokemonCard.attackdam2
             div.bottom-section

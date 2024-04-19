@@ -1,25 +1,42 @@
 const {PokeCards} = require('../models');
 
-const types = ['fire', 'water', 'grass', 'lightning', 'normal', 'fighting', 'dragon', 'psychic', 'dark', 'metal'];
-const energy_pics = ['https://i.ibb.co/nnB2xXB/Fire.png', 'https://i.ibb.co/3fCnsMP/Water.png', 'https://i.ibb.co/N7Z7xDL/Grass.png', 'https://i.ibb.co/3fq9yfM/Lightning.png', 'https://i.ibb.co/sFzJ0kS/Normal.png', 'https://i.ibb.co/XpyPYXT/Fighting.png', 'https://i.ibb.co/wwWt8cN/Psychic.png', 'https://i.ibb.co/B2db9QT/Dark.png', 'https://i.ibb.co/vYF2tK4/Metal.png'];
+const types = ['fire', 'water', 'grass', 'lightning', 'normal', 'fighting', 'dragon', 'psychic', 'dark', 'metal', 'fairy'];
+const energy_pics = ['', 'https://i.ibb.co/nnB2xXB/Fire.png', 'https://i.ibb.co/3fCnsMP/Water.png', 'https://i.ibb.co/N7Z7xDL/Grass.png', 'https://i.ibb.co/3fq9yfM/Lightning.png', 'https://i.ibb.co/sFzJ0kS/Normal.png', 'https://i.ibb.co/XpyPYXT/Fighting.png', 'https://i.ibb.co/wwWt8cN/Psychic.png', 'https://i.ibb.co/B2db9QT/Dark.png', 'https://i.ibb.co/vYF2tK4/Metal.png', 'https://i.ibb.co/tZhrv11/Fairy.png'];
 
 
 module.exports.viewAll = async function(req, res){
-    const pokemonCards = await PokeCards.findAll();
-
-
-    res.render('index', {pokemonCards, types});
+        let searchTypes = ['All'];
+        for(let i=0; i<types.length; i++){
+            searchTypes.push(types[i]);
+        }
+        let pokemonCards;
+        let searchType = req.query.type || 'All';
+        let searchRandom = req.query.random || false;
+        if (searchType === 'All'){
+            pokemonCards = await PokeCards.findAll();
+        } else {
+            pokemonCards = await PokeCards.findAll({
+                where: {
+                    type: searchType
+                }
+            });
+        }
+        if (pokemonCards.length > 0 && searchRandom) {
+            let randomIndex = getRandomInt(pokemonCards.length);
+            pokemonCards = [pokemonCards[randomIndex]];
+        }
+    res.render('index', {pokemonCards, types:searchTypes, searchType, searchRandom});
 }
 
 module.exports.renderEditForm = async function(req, res){
     const pokemonCard = await PokeCards.findByPk(
         req.params.id
     );
-    res.render('edit', {pokemonCard, types})
+    res.render('edit', {pokemonCard, types, energy_pics})
 }
 
 module.exports.updatePokemonCard = async function(req, res){
-    await pokemonCard.update(
+    await PokeCards.update(
         {
             name: req.body.name,
             type: req.body.type,
@@ -107,18 +124,10 @@ module.exports.addPokemonCard = async function(req, res){
             retreat_cost1: req.body.retreat_cost1,
             retreat_cost2: req.body.retreat_cost2
         });
-    res.redirect('');
+    res.redirect('/');
 }
 
-
-// module.exports.viewAll = async function(req, res){
-//     const pokemonCards = await PokeCards.findAll();
-//     let searchType = 'All';
-//     let searchTypes = ['All'];
-//     for(let i=0; i<types.length; i++){
-//         searchTypes.push(types[i]);
-//     }
-//
-//     res.render('index', {pokemonCards, types:searchTypes, searchType});
-// }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
